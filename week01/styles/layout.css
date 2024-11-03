@@ -1,0 +1,76 @@
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply grid layout to the body */
+body {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main aside"
+        "footer footer";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Styling for each section */
+header {
+    grid-area: header;
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Flexbox for navigation menu */
+nav {
+    display: flex;
+    justify-content: center; /* Centers the links horizontally */
+    gap: 15px; /* Space between the links */
+}
+
+nav ul {
+    display: flex;
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #007acc;
+}
+
+main {
+    grid-area: main;
+    background-color: #e0e0e0;
+    padding: 20px;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #d0d0d0;
+    padding: 20px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #c0c0c0;
+    padding: 20px;
+    text-align: center;
+}
