@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Index Page - WDD 131 - Anna Kelsey">
+    <meta name="description" content="The index page for Anna Kelsey's WDD 131 - Web Fundamentals class.">
+    <meta name="author" content="Anna Kelsey">
+    <title>WDD 131 - Dynamic Web Fundamentals - Anna Kelsey</title>
+</head>
+<body>
+    <header>
+        <h1>WDD 131: Dynamic Web Fundamentals - Anna Kelsey</h1>
+        <nav>
+            <ul>
+                <li><a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit" target="_blank">LinkedIn</a></li>
+                <li><a href="https://byui.instructure.com/" target="_blank">I-Learn</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/12?lang=eng" target="_blank">Scripture</a></li>
+                <li><a href="PLACEHOLDER, WILL NEED ACUTAL LINK LATER" target="_blank">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="card">
+            <h2>About Me</h2>
+            <img src="placeholderlol" alt="Placeholder - Picture of Anna">
+            <p>My name is Anna Kelsey. I was born in Fort Worth, Texas but I have lived in Utah since I was two years old. I am currently working as and Associate Researcher for a third party research company. I love going for hikes, swiming and biking. I also love music, and play the piano, guitar, clarinet and sing.</p>
+        </section>
+        <section class="card">
+            <h2>Web Dev Resources</h2>
+            <ul>
+                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS-Tricks - Flexbox Guide</a></li>
+                <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank" rel="noopener noreferrer">CSS-Tricks - Grid Guide</a></li>
+                <li><a href="https://flexboxfroggy.com/" target="_blank" rel="noopener noreferrer">Flexbox Froggy - Flexbox Game</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> - Anna Kelsey - Utah</p>
+        <script>
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+            document.getElementById("lastModified").textContent = "Last modified: " + document.lastModified;
+        </script>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
