@@ -7,6 +7,8 @@
     <meta name="description" content="The index page for Anna Kelsey's WDD 131 - Web Fundamentals class.">
     <meta name="author" content="Anna Kelsey">
     <title>WDD 131 - Dynamic Web Fundamentals - Anna Kelsey</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
     <header>
@@ -23,7 +25,7 @@
     <main>
         <section class="card">
             <h2>About Me</h2>
-            <img src="placeholderlol" alt="Placeholder - Picture of Anna">
+            <img src="images/annakheadshot.jpg" alt="Picture of Anna">
             <p>My name is Anna Kelsey. I was born in Fort Worth, Texas but I have lived in Utah since I was two years old. I am currently working as and Associate Researcher for a third party research company. I love going for hikes, swiming and biking. I also love music, and play the piano, guitar, clarinet and sing.</p>
         </section>
         <section class="card">
@@ -37,10 +39,6 @@
     </main>
     <footer>
         <p>&copy; <span id="current-year"></span> - Anna Kelsey - Utah</p>
-        <script>
-            document.getElementById("current-year").textContent = new Date().getFullYear();
-            document.getElementById("lastModified").textContent = "Last modified: " + document.lastModified;
-        </script>
         <p id="lastModified"></p>
     </footer>
 </body>
