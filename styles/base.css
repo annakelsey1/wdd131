@@ -13,8 +13,8 @@
     /* Dark gray for text */
 
     /* Font settings */
-    --header-font: 'Georgia', serif;
-    --body-font: 'Arial', sans-serif;
+    --header-font: 'Host Grotesk', sans-serif;
+    --body-font: 'Host Grotesk', sans-serif;
 }
 
 * {
@@ -43,6 +43,7 @@ header h1 {
     font-family: var(--header-font);
     font-size: 2em;
 }
+
 
 nav ul {
     list-style: none;
@@ -167,4 +168,8 @@ div img {
 
 div p {
     flex: 1;                     /* Makes the paragraph take up the remaining space */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
 }
