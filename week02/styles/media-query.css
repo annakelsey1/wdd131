@@ -20,9 +20,7 @@ main {
     background-color: #97cdf3;
     text-align: center;
     border-radius: 8px;
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
 }
 
 section {
@@ -40,4 +38,9 @@ footer {
     background-color: #97cdf3;
     text-align: center;
     border-radius: 8px;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
 }
