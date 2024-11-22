@@ -18,15 +18,31 @@ header {
     border-bottom: 20px solid #C6011F;
 }
 
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .row {
 	display: grid;
 	grid-template-columns: 100px 100px;
 	align-items: center;
 	text-align: center;
+    justify-content: center;
 }
 
 .col {
 	border-top: var(--bord);
 	border-left: var(--bord);
 	padding: 10px;
+}
+
+footer {
+    background-color: #002D62;
+    color: #F0F8FF;
+    width: 100%;
+    align-items: center;
+    text-align: center;
 }
