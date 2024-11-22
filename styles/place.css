@@ -1,5 +1,16 @@
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --primary-bg-color: #002D62;
+    --primary-text-color: #F0F8FF;
+    --secondary-color: #C6011F;
+    --border-width: 20px;
+    --padding: 0.5rem;
+    --grid-col-width: 100px;
+    --cell-padding: 10px;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,14 +19,14 @@ body {
 
 header {
     margin: 0;
-    padding: 0.5rem;
+    padding: var(--padding);
     width: 100%;
-    background-color: #002D62;
-    color: #F0F8FF;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 20px solid #C6011F;
+    border-bottom: var(--border-width) solid var(--secondary-color);
 }
 
 h2 {
@@ -45,8 +56,8 @@ h2 {
 }
 
 footer {
-    background-color: #002D62;
-    color: #F0F8FF;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
     width: 100%;
     align-items: center;
     text-align: center;
