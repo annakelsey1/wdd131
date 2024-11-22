@@ -1,3 +1,32 @@
 body {
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    margin: 0;
+    padding: 0.5rem;
+    width: 100%;
+    background-color: #002D62;
+    color: #F0F8FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 20px solid #C6011F;
+}
+
+.row {
+	display: grid;
+	grid-template-columns: 100px 100px;
+	align-items: center;
+	text-align: center;
+}
+
+.col {
+	border-top: var(--bord);
+	border-left: var(--bord);
+	padding: 10px;
 }
