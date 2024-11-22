@@ -25,6 +25,21 @@
         z-index: 2;
         max-width: 300px;
     }
+
+    .weather h2::after {
+        content: "⛅"; /* Partly cloudy emoticon */
+        font-size: 1.5rem; /* Adjust size to match heading */
+        margin-right: 8px; /* Adds spacing between the icon and the text */
+        vertical-align: middle; /* Aligns the icon with the text */
+    }
+
+    .svg {
+        position: relative;
+        width: 0; /* Shrinks the width */
+        height: 0; /* Shrinks the height */
+        overflow: hidden; /* Ensures the SVG doesn't show */
+        visibility: hidden; /* Hides the SVG visually */
+    }
     
     picture img {
         display: block;
