@@ -83,6 +83,7 @@ const temples = [
 
   document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container');
+    const homeLink = document.querySelector('a[href="#home"]');
     const oldLink = document.querySelector('a[href="#old"]');
     const newLink = document.querySelector('a[href="#new"]');
     const largeLink = document.querySelector('a[href="#large"]');
@@ -127,6 +128,11 @@ const temples = [
     };
 
     generateTempleCards();
+
+    homeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        generateTempleCards();
+    });
 
     oldLink.addEventListener('click', (e) => {
         e.preventDefault();
