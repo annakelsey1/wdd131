@@ -82,48 +82,75 @@ const temples = [
   ];
 
   document.addEventListener("DOMContentLoaded", () => {
-    const container = document.querySelector('.container'); // Select the container
+    const container = document.querySelector('.container');
+    const oldLink = document.querySelector('a[href="#old"]');
+    const newLink = document.querySelector('a[href="#new"]');
+    const largeLink = document.querySelector('a[href="#large"]');
+    const smallLink = document.querySelector('a[href="#small"]');
 
-    temples.forEach(temple => {
-        // Create card element
-        const card = document.createElement('div');
-        card.classList.add('card'); // Add a card class for styling
+    const generateTempleCards = (filterFn = () => true) => {
+        container.innerHTML = '';
 
-        // Create an image element with lazy loading
-        const img = document.createElement('img');
-        img.src = temple.imageUrl;
-        img.alt = `${temple.templeName} picture`;
-        img.loading = 'lazy'; // Add lazy loading attribute
+        temples.filter(filterFn).forEach(temple => {
+            const card = document.createElement('div');
+            card.classList.add('card');
 
-        // Add event listener to set data-loaded attribute when image loads
-        img.addEventListener('load', () => {
-            img.setAttribute('data-loaded', 'true');
+            const img = document.createElement('img');
+            img.src = temple.imageUrl;
+            img.alt = `${temple.templeName} picture`;
+            img.loading = 'lazy';
+
+            img.addEventListener('load', () => {
+                img.setAttribute('data-loaded', 'true');
+            });
+
+            const name = document.createElement('h3');
+            name.textContent = temple.templeName;
+
+            const location = document.createElement('p');
+            location.innerHTML = `<strong>Location:</strong> ${temple.location}`;
+
+            const dedication = document.createElement('p');
+            dedication.innerHTML = `<strong>Dedicated:</strong> ${temple.dedicated}`;
+
+            const size = document.createElement('p');
+            size.innerHTML = `<strong>Size:</strong> ${temple.area.toLocaleString()} sq. ft`;
+
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(location);
+            card.appendChild(dedication);
+            card.appendChild(size);
+
+            container.appendChild(card);
         });
+    };
 
-        // Create a heading for the temple name
-        const name = document.createElement('h3');
-        name.textContent = temple.templeName;
+    generateTempleCards();
 
-        // Create a paragraph for location
-        const location = document.createElement('p');
-        location.innerHTML = `<strong>Location:</strong> ${temple.location}`;
+    oldLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        generateTempleCards(temple => {
+            const [year] = temple.dedicated.split(', ').map(part => parseInt(part, 10));
+            return year < 1990;
+        });
+    });
 
-        // Create a paragraph for dedication date
-        const dedication = document.createElement('p');
-        dedication.innerHTML = `<strong>Dedicated:</strong> ${temple.dedicated}`;
+    newLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        generateTempleCards(temple => {
+            const [year] = temple.dedicated.split(', ').map(part => parseInt(part, 10));
+            return year > 2000;
+        });
+    });
 
-        // Create a paragraph for size
-        const size = document.createElement('p');
-        size.innerHTML = `<strong>Size:</strong> ${temple.area.toLocaleString()} sq. ft`;
+    largeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        generateTempleCards(temple => temple.area > 90000);
+    });
 
-        // Append elements to the card
-        card.appendChild(img);
-        card.appendChild(name);
-        card.appendChild(location);
-        card.appendChild(dedication);
-        card.appendChild(size);
-
-        // Append the card to the container
-        container.appendChild(card);
+    smallLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        generateTempleCards(temple => temple.area < 10000);
     });
 });
