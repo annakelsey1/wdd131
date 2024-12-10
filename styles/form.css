@@ -1,16 +1,83 @@
 :root {
     --font-family: 'Roboto', sans-serif;
-    --border-width: 20px;
-    --padding: 0.5rem;
-    --grid-col-width: 100px;
-    --cell-padding: 10px;
+    --primary-yellow: #FFD700;
+    --primary-blue: #1E90FF;
+    --primary-black: #333333;
+    --secondary-gray: #f9f9f9;
+    --border-radius: 5px;
+    --padding: 1rem;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--secondary-gray);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-blue);
+    color: white;
+    text-align: center;
+    padding: var(--padding);
+    border-bottom: 5px solid var(--primary-yellow);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+main {
+    margin: var(--padding);
+    background-color: white;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form div, fieldset {
+    margin-bottom: var(--padding);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--primary-black);
+}
+
+input[type="text"], 
+select, 
+textarea, 
+input[type="date"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-black);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+   
 }
 
 .rating {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: center;
     gap: 5px;
+    flex-direction: row;
 }
 
 .rating input[type="radio"] {
@@ -27,6 +94,18 @@
     color: gold;
 }
 
-.rating input[type="radio"]:checked + label {
+.rating label:hover,
+.rating label:hover ~ label {
     color: gold;
+}
+
+fieldset div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+fieldset div label {
+    margin: 0;
 }
