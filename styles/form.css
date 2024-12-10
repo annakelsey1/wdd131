@@ -1,24 +1,32 @@
-    .rating {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        gap: 5px;
-    }
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --border-width: 20px;
+    --padding: 0.5rem;
+    --grid-col-width: 100px;
+    --cell-padding: 10px;
+}
 
-    .rating input[type="radio"] {
-        display: none;
-    }
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 5px;
+}
 
-    .rating label {
-        font-size: 2rem;
-        cursor: pointer;
-        color: #ccc;
-    }
+.rating input[type="radio"] {
+    display: none;
+}
 
-    .rating input[type="radio"]:checked ~ label {
-        color: gold;
-    }
+.rating label {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ccc;
+}
 
-    .rating input[type="radio"]:checked + label {
-        color: gold;
-    }
+.rating input[type="radio"]:checked ~ label {
+    color: gold;
+}
+
+.rating input[type="radio"]:checked + label {
+    color: gold;
+}
