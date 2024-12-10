@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD131 Assignment to make a product review form for both large and mobile screens.">
+    <meta name="author" content="Anna Kelsey">
+    <title>Product Review Form - WDD131</title>
+    <style>
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .rating input[type="radio"] {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 2rem;
+            cursor: pointer;
+            color: #ccc;
+        }
+
+        .rating input[type="radio"]:checked ~ label {
+            color: gold;
+        }
+
+        .rating input[type="radio"]:checked + label {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+    <form method="get" action="review.html">
+        <div>
+            <label for="user-name">Your Name (optional):</label>
+            <input type="text" id="user-name" name="user_name" placeholder="Enter your name">
+        </div>
+        <br>
+
+        <div>
+            <label for="product">Select a Product:</label>
+            <select id="product" name="product" required>
+                <option value="" disabled selected>Select a Product ...</option>
+            </select>
+        </div>
+        <br>
+
+        <div>
+            <label for="install-date">Installation Date:</label>
+            <input type="date" id="install-date" name="install_date" required>
+        </div>
+        <br>
+
+        <fieldset>
+            <legend>What features did you find useful? (Check all that apply):</legend>
+            <div>
+                <input type="checkbox" id="feature1" name="features" value="Battery Life">
+                <label for="feature1">Battery Life</label>
+            </div>
+            <div>
+                <input type="checkbox" id="feature2" name="features" value="Performance">
+                <label for="feature2">Performance</label>
+            </div>
+            <div>
+                <input type="checkbox" id="feature3" name="features" value="Design">
+                <label for="feature3">Design</label>
+            </div>
+            <div>
+                <input type="checkbox" id="feature4" name="features" value="Durability">
+                <label for="feature4">Durability</label>
+            </div>
+            <div>
+                <input type="checkbox" id="feature5" name="features" value="Ease of Use">
+                <label for="feature5">Ease of Use</label>
+            </div>
+        </fieldset>
+        <br>
+
+        <div>
+            <label for="review">Write a Review (optional):</label>
+            <textarea id="review" name="review" rows="5" cols="40" placeholder="Share your thoughts about the product..."></textarea>
+        </div>
+        <br>
+
+        <fieldset>
+            <legend>Rate the Product:</legend>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" required>
+                <label for="star5">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">&#9733;</label>
+            </div>
+        </fieldset>
+        <br>
+
+        <div>
+            <input type="submit" value="Submit Your Review">
+        </div>
+    </form>
+
+    <script>
+        const products = ["Laptop", "Smartphone", "Tablet", "Headphones", "Smartwatch"];
+        const selectElement = document.getElementById("product");
+
+        products.forEach(product => {
+            const option = document.createElement("option");
+            option.value = product;
+            option.textContent = product;
+            selectElement.appendChild(option);
+        });
+    </script>
+</body>
+</html>
