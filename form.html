@@ -6,32 +6,9 @@
     <meta name="description" content="WDD131 Assignment to make a product review form for both large and mobile screens.">
     <meta name="author" content="Anna Kelsey">
     <title>Product Review Form - WDD131</title>
-    <style>
-        .rating {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .rating input[type="radio"] {
-            display: none;
-        }
-
-        .rating label {
-            font-size: 2rem;
-            cursor: pointer;
-            color: #ccc;
-        }
-
-        .rating input[type="radio"]:checked ~ label {
-            color: gold;
-        }
-
-        .rating input[type="radio"]:checked + label {
-            color: gold;
-        }
-    </style>
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/form.js" defer></script>
+    <link rel="stylesheet" href="styles/form.css">
 </head>
 <body>
     <header>
@@ -111,16 +88,10 @@
         </div>
     </form>
 
-    <script>
-        const products = ["Laptop", "Smartphone", "Tablet", "Headphones", "Smartwatch"];
-        const selectElement = document.getElementById("product");
-
-        products.forEach(product => {
-            const option = document.createElement("option");
-            option.value = product;
-            option.textContent = product;
-            selectElement.appendChild(option);
-        });
-    </script>
+    
+    <footer>
+        <p>&copy; <span id="current-year"></span> - Anna Kelsey - Utah</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>
