@@ -1,0 +1,103 @@
+
+body {
+    font-family: 'Parkinsans', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #8B4513;
+    color: #F5F5DC;
+    padding: 1.5em 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #4CAF50;
+    padding: 0.5em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1em;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1em;
+}
+
+.filters {
+    margin: 1em 0;
+}
+
+.filters a {
+    margin-right: 1em;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.filters a:hover {
+    text-decoration: underline;
+}
+
+.trails-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5em;
+}
+
+.trail {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.trail img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.trail h3 {
+    margin: 0;
+    padding: 0.5em;
+    background: #f4f4f4;
+}
+
+.trail p {
+    padding: 0.5em;
+}
+
+.trail a {
+    display: block;
+    padding: 0.5em;
+    text-align: center;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+}
+
+.trail a:hover {
+    background: #45a049;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
