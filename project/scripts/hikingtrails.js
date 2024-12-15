@@ -26,3 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     filterTrails('all');
 });
+
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(link => {
+    link.addEventListener('mouseover', () => {
+        link.style.backgroundColor = '#FFEB3D';
+    });
+
+    link.addEventListener('mouseout', () => {
+        link.style.backgroundColor = '';
+    });
+});

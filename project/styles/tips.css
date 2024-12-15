@@ -67,20 +67,6 @@ nav a:hover {
     vertical-align: middle;
 }
 
-.sticky-footer {
-    position: sticky;
-    bottom: 0;
-    background: #4CAF50;
-    padding: 0.5em;
-    text-align: center;
-}
-
-.sticky-footer a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
 footer {
     background: #333;
     color: white;
